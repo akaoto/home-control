@@ -41,7 +41,7 @@ function update() {
             Appliance.Fan.turnOn();
             if (!home.light && home.illuminance < 20) {
                 Appliance.Light.turnOn();
-            } else if (home.light && 70 < home.illuminance) {
+            } else if (home.light && 100 < home.illuminance) {
                 Appliance.Light.turnOff();
             }
         }
