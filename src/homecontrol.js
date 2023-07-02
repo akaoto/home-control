@@ -115,7 +115,7 @@ class ApplianceControler {
     Light_turnOn() {
         const status = CacheServer.get('light_status');
         if (!status) {
-            this._natureRemo.sendSignal(this._lightId);
+            [...Array(2)].forEach(() => this._natureRemo.sendSignal(this._lightId));
             CacheServer.put('light_status', true);
         }
     }
@@ -123,7 +123,7 @@ class ApplianceControler {
     Light_turnOff() {
         const status = CacheServer.get('light_status');
         if (status) {
-            [...Array(3)].forEach(() => this._natureRemo.sendSignal(this._lightId));
+            [...Array(2)].forEach(() => this._natureRemo.sendSignal(this._lightId));
             CacheServer.put('light_status', false);
         }
     }
