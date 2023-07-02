@@ -72,7 +72,7 @@ class NatureRemo {
     Aircon_turnOn(airconId, mode, temperature) {
         const settings = {
             'mode': mode,
-            'temperature': temperature
+            'temp': temperature
         };
         this.writeAirconSettings(airconId, settings);
     }
